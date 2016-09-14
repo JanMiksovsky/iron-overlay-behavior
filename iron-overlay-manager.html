@@ -169,24 +169,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
       this._overlays.splice(i, 1);
 
-      // var node = overlay.restoreFocusOnClose ? overlay.restoreFocusNode : null;
-      // overlay.restoreFocusNode = null;
-      // 
-      // // Focus back only if still contained in document.body
-      // if (node && Polymer.dom(document.body).deepContains(node)) {
-      //   // Only restore focus to the indicated node if focus is currently
-      //   // somewhere within the overlay. If focus is outside the overlay, the
-      //   // user is likely trying to tab away, in which case it would be
-      //   // inappropriate to grab focus back.
-      //   var focusStillWithinOverlay = overlay.shadowRoot ?
-      //     overlay.shadowRoot.activeElement !== null :
-      //     Polymer.dom(overlay).deepContains(node);
-      //   console.log(`iron-overlay-manager: restoreFocusNode = ${node.localName}, focusStillWithinOverlay = ${focusStillWithinOverlay}`);
-      //   if (focusStillWithinOverlay) {
-      //     node.focus();
-      //   }
-      // }
-
       this.trackBackdrop();
     },
 
