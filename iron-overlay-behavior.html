@@ -466,19 +466,9 @@ context. You should place this element as a child of `<body>` whenever possible.
         this._focusedChild = null;
         // Restore focus.
         if (this.restoreFocusOnClose && this._restoreFocusNode) {
-          // Only restore focus to the indicated node if focus is currently
-          // somewhere within the overlay. If focus is outside the overlay, the
-          // user is likely trying to tab away, in which case it would be
-          // inappropriate to grab focus back.
-          var focusStillWithinOverlay = this.shadowRoot ?
-            this.shadowRoot.activeElement !== null :
-            Polymer.dom(this).deepContains(this._restoreFocusNode);
-          if (focusStillWithinOverlay) {
-            this._restoreFocusToNode(this._restoreFocusNode);
-          }
+          this._restoreFocusToNode(this._restoreFocusNode);
         }
         this._restoreFocusNode = null;
-
         // If many overlays get closed at the same time, one of them would still
         // be the currentOverlay even if already closed, and would call _applyFocus
         // infinitely, so we check for this not to be the current overlay.
